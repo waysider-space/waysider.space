@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Waysider</title>
+<meta name="description" content="Waysider. Small software, built off to the side. First: release.garden.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%230e0d0b'/%3E%3Ctext x='50' y='70' font-size='58' font-family='Georgia,serif' fill='%23e8c33f' text-anchor='middle'%3EW%3C/text%3E%3C/svg%3E">
+
+<style>
+  :root {
+    --bg: #100f0c;
+    --paper: #ece5d5;
+    --dim: #837a68;
+    --line: #3a352a;
+    --acc: #e8c33f;
+  }
+
+  * { box-sizing: border-box; }
+
+  html, body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--paper);
+  }
+
+  body {
+    font-family: "Space Mono", ui-monospace, monospace;
+    min-height: 100svh;
+    position: relative;
+    overflow-x: hidden;
+    background-image:
+      radial-gradient(rgba(255,255,255,0.025) 1px, transparent 1px);
+    background-size: 3px 3px;
+  }
+
+  .mark {
+    position: fixed;
+    width: 14px;
+    height: 14px;
+    color: var(--line);
+    z-index: 5;
+    pointer-events: none;
+  }
+  .mark::before, .mark::after {
+    content: "";
+    position: absolute;
+    background: currentColor;
+  }
+  .mark::before { width: 100%; height: 1px; top: 50%; left: 0; }
+  .mark::after { width: 1px; height: 100%; left: 50%; top: 0; }
+  .mark.tl { top: 14px; left: 14px; }
+  .mark.tr { top: 14px; right: 14px; }
+  .mark.bl { bottom: 14px; left: 14px; }
+  .mark.br { bottom: 14px; right: 14px; }
+  @media (max-width: 560px) { .mark { display: none; } }
+
+  .wrap {
+    max-width: 620px;
+    margin: 0 auto;
+    padding: 56px 28px 40px;
+  }
+
+  .brand {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: clamp(56px, 14vh, 110px);
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+
+  .brand .stamp {
+    border: 1px solid var(--paper);
+    padding: 5px 10px;
+    transform: rotate(-2deg);
+  }
+
+  h1 {
+    font-family: "Archivo Black", sans-serif;
+    font-weight: 400;
+    text-transform: uppercase;
+    font-size: clamp(2.6rem, 10vw, 5rem);
+    line-height: 0.92;
+    letter-spacing: -0.01em;
+    margin: 0 0 28px;
+  }
+
+  h1 span { color: var(--acc); }
+
+  .cut {
+    margin: 52px 0 40px;
+    border: none;
+    border-top: 1px dashed var(--line);
+    position: relative;
+  }
+  .cut::after {
+    content: "※";
+    position: absolute;
+    top: -9px;
+    left: 0;
+    background: var(--bg);
+    padding-right: 10px;
+    color: var(--line);
+    font-size: 12px;
+  }
+
+  .label {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--dim);
+    margin: 0 0 22px;
+  }
+
+  .ticket {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    border: 1px dashed var(--paper);
+    padding: 22px 20px;
+    position: relative;
+    transform: rotate(-0.6deg);
+    transition: transform 0.15s ease, border-color 0.15s ease;
+  }
+  .ticket:hover {
+    transform: rotate(0deg);
+    border-color: var(--acc);
+  }
+  .ticket:hover .go { color: var(--acc); }
+
+  .ticket-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 12px;
+    font-size: 11px;
+    color: var(--dim);
+    text-transform: uppercase;
+    margin-bottom: 14px;
+  }
+
+  .ticket-top .live {
+    color: var(--acc);
+  }
+  .ticket-top .live::before {
+    content: "● ";
+  }
+
+  .ticket h2 {
+    font-family: "Archivo Black", sans-serif;
+    font-weight: 400;
+    font-size: clamp(1.5rem, 5vw, 2.1rem);
+    margin: 0 0 10px;
+    text-transform: lowercase;
+  }
+
+  .ticket p {
+    font-size: 12.5px;
+    color: var(--dim);
+    margin: 0 0 16px;
+    max-width: 40ch;
+    line-height: 1.6;
+  }
+
+  .go {
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 700;
+    border-top: 1px solid var(--line);
+    padding-top: 10px;
+    width: 100%;
+  }
+  .go::after { content: " ›"; }
+
+  footer {
+    margin-top: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    font-size: 11px;
+    color: var(--dim);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  footer a { color: var(--dim); }
+  footer a:hover { color: var(--acc); }
+
+  @media (max-width: 420px) {
+    footer { flex-direction: column; align-items: flex-start; gap: 8px; }
+  }
+</style>
+</head>
+<body>
+  <span class="mark tl"></span>
+  <span class="mark tr"></span>
+  <span class="mark bl"></span>
+  <span class="mark br"></span>
+
+  <div class="wrap">
+    <div class="brand">
+      <span class="stamp">Waysider</span>
+    </div>
+
+    <h1>Software<br>off the<br><span>main road.</span></h1>
+
+    <hr class="cut">
+
+    <p class="label">Currently open — 01</p>
+
+    <a class="ticket" href="https://release.garden" target="_blank" rel="noopener">
+      <div class="ticket-top">
+        <span class="live">live</span>
+        <span>est. 2026</span>
+      </div>
+      <h2>release.garden</h2>
+      <p>A home for your releases.</p>
+      <span class="go">release.garden</span>
+    </a>
+
+    <footer>
+      <span>waysider.space</span>
+      <a href="mailto:hello@waysider.space">hello@waysider.space</a>
+    </footer>
+  </div>
+</body>
+</html>
