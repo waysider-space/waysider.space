@@ -56,20 +56,16 @@
                 min-height: 100px;
                 display: flex;
                 align-items: center;
-                justify-content: space-between;
+                justify-content: center;
                 gap: 24px;
                 border-bottom: 1px solid var(--line);
             }
             .wordmark {
                 display: inline-flex;
                 align-items: center;
-                gap: 10px;
-                font-size: 24px;
-                font-weight: 700;
-                letter-spacing: -.06em;
                 text-decoration: none;
             }
-            .brand-mark { width: 26px; height: 29px; color: var(--accent); }
+            .brand-mark { width: 48px; height: 48px; color: var(--accent); }
             .arrow { width: 15px; height: 15px; flex: none; }
 
             .hero {
@@ -128,7 +124,6 @@
             }
             @media (max-width: 420px) {
                 .page { width: calc(100% - 40px); }
-                .wordmark { font-size: 22px; }
                 .project { grid-template-columns: 1fr; position: relative; padding: 25px; }
                 .project-copy { position: relative; z-index: 1; }
                 .garden-doodle { position: absolute; width: 61px; height: 80px; right: 23px; top: 9px; }
@@ -144,10 +139,13 @@
         <div class="page">
             <header class="site-header">
                 <a class="wordmark" href="/" aria-label="Waysider home">
-                    <svg class="brand-mark" viewBox="0 0 30 32" fill="none" aria-hidden="true">
-                        <path d="m3 6 6 20 6-13 6 13 6-20" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+                    <svg class="brand-mark" viewBox="0 0 64 64" aria-hidden="true">
+                        <path fill="#FCFBF8" d="M0 0h64v64H0z" />
+                        <g fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M8 17 17 44c1.8 5.5 4.7 5.8 7 .7L32 28l8 16.5c2.6 5.5 5.4 4.7 7.2-.8L56 13" />
+                            <path d="m16 15 5.5 17.5 6.8-14.2c2.1-4.4 4.9-4.8 7.3.2L43 33l5-20" />
+                        </g>
                     </svg>
-                    <span>waysider</span>
                 </a>
             </header>
 
