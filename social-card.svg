@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+    <title>Waysider — Software off the main road</title>
+    <desc>A winding road, a little signpost, and a sunny sky on warm cream paper.</desc>
+    <rect width="1200" height="630" fill="#fcfbf8" />
+
+    <g fill="none" stroke="#974932" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="m88 75 7 24 7-16 7 16 7-24" />
+    </g>
+    <text x="130" y="100" fill="#272b27" font-family="DM Sans, Arial, sans-serif" font-size="34" font-weight="700" letter-spacing="-1.8">waysider</text>
+    <path d="M88 141H1112" fill="none" stroke="#e4e3dc" />
+
+    <g fill="#272b27" font-family="DM Sans, Arial, sans-serif" font-size="86" font-weight="600" letter-spacing="-4.5">
+        <text x="84" y="264">Software</text>
+        <text x="84" y="353">off the</text>
+        <text x="84" y="442" fill="#974932">main road.</text>
+    </g>
+
+    <!-- The same slightly wonky road and signpost as the homepage. -->
+    <g transform="translate(726 162) scale(1.1)" fill="none" stroke="#974932" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M74 291c-11-36 10-59 49-72 42-14 78-18 82-40 4-19-30-25-37-44-6-18 7-34 17-44" />
+        <path d="M112 294c-15-31 8-43 38-55 40-16 79-23 86-53 7-32-33-41-40-55-6-11 0-24 7-37" />
+        <path d="m92 276 1-12m14-16 10-6m19-8 13-5m19-6 12-4m18-7 10-6m12-15 2-10m-6-17-8-7m-14-15-5-9m-2-17 3-9" stroke-width="1.3" />
+        <path d="m236 172-4-98 5-1 6 97m-10 1 15-2" />
+        <path d="m212 79 60-5 15 13-13 13-60 2Z" fill="#fcfbf8" />
+        <path d="m244 88 25-1m-7-5 7 5-7 5" />
+        <path d="m62 211 4-12 4 12m-5-3-6-5m7 4 9-5m181 20 5-12 4 12m-4-5 8-5" stroke-width="1.4" />
+        <path d="M60 221c8-3 16-3 24-2m166 15 19-2M278 178l9 2m-241 84 13-2m103 24 10 1" stroke-width="1.3" />
+        <path d="M91 76c-5-8-1-17 7-19 10-3 19 4 18 12-1 10-17 15-25 7Zm9-32 1-8m25 18 7-5m-7 28 8 4M82 52l-6-6m6 34-7 5" stroke-width="1.5" />
+        <path d="M160 50c6-10 13-9 17-3 7-10 16-8 21-1" stroke-width="1.3" />
+    </g>
+    <text x="882" y="511" fill="#974932" font-family="Chalkboard SE, Comic Sans MS, cursive" font-size="20">the scenic route</text>
+
+    <path d="M88 549H1112" fill="none" stroke="#e4e3dc" />
+    <g fill="#696d65" font-family="DM Mono, monospace" font-size="16">
+        <text x="88" y="589">A little off the beaten path.</text>
+        <text x="978" y="589">waysider.space</text>
+    </g>
+</svg>
